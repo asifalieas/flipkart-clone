@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const env = require("dotenv");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 //routes
@@ -23,7 +22,7 @@ mongoose
     console.log("database connected");
   });
 
-app.use(bodyParser());
+app.use(express.json());
 app.use("/api", authRoutes);
 app.use("/api", adminRoutes);
 
